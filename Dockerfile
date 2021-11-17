@@ -1,7 +1,7 @@
 FROM php:7.4
 
-COPY ./sample.php .
+COPY ./index.php .
 
-CMD ["php", "./sample.php"]
+CMD ["php", "./index.php"]
 
 EXPOSE 80
