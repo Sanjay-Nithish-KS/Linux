@@ -1,9 +1,10 @@
-FROM php:7.2-apache
-
-RUN apt-get update && apt-get install -y
-
-RUN docker-php-ext-install mysqli
-
-ADD index.php /var/www/html
-
+FROM ubuntu
+RUN apt-get update -y
+ARG DEBIAN_FRONTEND=noninteractive
+RUN apt-get install -y apache2 php php-mysqli
+WORKDIR var/www/html
+RUN rm index.html
+COPY index.php index.php
 EXPOSE 80
+CMD ["apachectl", "-D", "FOREGROUND"]
+
