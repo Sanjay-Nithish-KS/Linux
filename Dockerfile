@@ -1,7 +1,7 @@
-FROM php:7.4
+FROM php:7.2-apache
 
-COPY ./index.php .
+RUN apt-get update && apt-get install -y
 
-CMD ["php", "./index.php"]
+RUN apt-get install mysqli
 
-EXPOSE 80
+ADD index.php /var/www/html
