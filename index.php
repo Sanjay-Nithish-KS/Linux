@@ -6,6 +6,6 @@ if (!$link) {
         die('Could not connect to MYSQL ');
         echo "\n";
 }
-echo 'Connected successfully with MYSQL';
+echo 'Connected Successfully with MYSQL';
 mysqli_close($link);
 ?>
