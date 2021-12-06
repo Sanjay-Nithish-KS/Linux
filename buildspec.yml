@@ -3,7 +3,7 @@ phases:
   pre_build:
     commands:
       - REPOSITORY_URI=public.ecr.aws/s5o7d0z2/sanjay-php
-      - IMAGE_TAG=build-$(echo $CODEBUILD_BUILD_NUMBER | awk -F":" '{print $2}')
+      - IMAGE_TAG=build-$(echo $CODEBUILD_BUILD_NUMBER)
   build:
     commands:
       - docker build -t $REPOSITORY_URI:latest .
