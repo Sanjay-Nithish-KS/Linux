@@ -4,7 +4,7 @@ phases:
     commands:
       - REPOSITORY_URI=public.ecr.aws/s5o7d0z2/sanjay-php
       - echo $DockerPass | docker login --username $DockerUser --password-stdin 
-      - IMAGE_TAG=build-$(echo $CODEBUILD_BUILD_ID | awk -F":" '{print $2}')
+      - IMAGE_TAG=build-$(echo $CODEBUILD_BUILD_NUMBER | awk -F":" '{print $2}')
   build:
     commands:
       - docker build -t $REPOSITORY_URI:latest .
