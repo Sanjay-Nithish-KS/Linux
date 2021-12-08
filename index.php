@@ -1,7 +1,8 @@
 <?php
 $db_user='admin';
 $db_pass='adminadmin';
-$link = mysqli_connect('localhost:3306',"$db_user", "$db_pass");
+$host=trim(file_get_contents('dns.txt'));
+$link = mysqli_connect("$host","$db_user", "$db_pass");
 if (!$link) {
         die('Could not connect to MYSQL ');
         echo "\n";
