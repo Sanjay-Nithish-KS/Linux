@@ -1,6 +1,6 @@
 <?php
-$db_user='admin';
-$db_pass='adminadmin';
+$db_user='user_name';
+$db_pass='password';
 $host=trim(file_get_contents('dns.txt'));
 $link = mysqli_connect("$host","$db_user", "$db_pass");
 if (!$link) {
